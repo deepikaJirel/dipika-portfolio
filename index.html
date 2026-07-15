@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dipika Jirel Portfolio</title>
+
+  <style>
+    :root {
+      --cream: #f7f2e8;
+      --cream-2: #fbf8f0;
+      --sage: #6f8f75;
+      --sage-dark: #4f7258;
+      --sage-soft: #dfe9dc;
+      --ink: #243329;
+      --muted: #65746a;
+      --line: #d8ddcf;
+      --gold-soft: #efe4cd;
+      --clay-soft: #f0ded6;
+      --card: rgba(255, 255, 255, 0.64);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 11% 18%, rgba(223,233,220,.75) 0 0, rgba(223,233,220,.75) 225px, transparent 228px),
+        radial-gradient(circle at 93% 46%, rgba(239,228,205,.62) 0 0, rgba(239,228,205,.62) 165px, transparent 168px),
+        radial-gradient(circle at 100% 10%, rgba(223,233,220,.70) 0 0, rgba(223,233,220,.70) 88px, transparent 90px),
+        linear-gradient(rgba(79,111,88,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,111,88,.055) 1px, transparent 1px),
+        var(--cream);
+      background-size: auto, auto, auto, 36px 36px, 36px 36px, auto;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      width: min(100%, 1366px);
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .wrap {
+      width: min(100% - 40px, 670px);
+      margin: 0 auto;
+    }
+
+    .nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 242, 232, .68);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(79,111,88,.08);
+    }
+
+    .nav-inner {
+      width: min(100% - 40px, 670px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .brand-mark {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--sage-soft);
+      border: 1px solid rgba(79,111,88,.22);
+      color: var(--sage-dark);
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 10px;
+      color: #53625a;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-button {
+      width: 34px;
+      height: 20px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--sage-dark);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .hero {
+      padding: 72px 0 72px;
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      align-items: center;
+      gap: 52px;
+      min-height: 330px;
+    }
+
+    .tiny-pill {
+      width: 24px;
+      height: 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(79,111,88,.18);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .tiny-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: var(--sage-dark);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0;
+      line-height: .95;
+      letter-spacing: -.045em;
+      font-size: clamp(38px, 5vw, 58px);
+    }
+
+    .hero-title {
+      font-size: 58px;
+    }
+
+    .role {
+      margin: 16px 0 10px;
+      line-height: 1.4;
+      color: #44554c;
+      font-weight: 700;
+      font-size: 13.5px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 600;
+      font-size: 12px;
+      max-width: 380px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill-button {
+      width: 37px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      border: 0;
+    }
+
+    .pill-button.green {
+      width: 50px;
+      background: var(--sage-dark);
+      color: white;
+    }
+
+    .pill-button.light {
+      width: 48px;
+      background: rgba(255,255,255,.72);
+      color: var(--sage-dark);
+      border: 1px solid rgba(79,111,88,.07);
+    }
+
+    .meta {
+      margin-top: 25px;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .hero-photo-wrap {
+       position: relative;
+  justify-self: end;
+  width: 250px;
+  overflow: visible;
+}
+    .photo-glow {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      z-index: 1;
+    }
+
+    .photo-dash {
+      position: absolute;
+      left: -18px;
+      top: 8px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: 1px dashed rgba(79,111,88,.45);
+      z-index: 1;
+    }
+
+    .photo-card {
+      position: relative;
+      z-index: 2;
+      background: var(--sage-soft);
+      padding: 8px;
+      border-radius: 24px 24px 62px 24px;
+      box-shadow: 0 18px 35px rgba(64,83,65,.16);
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px 18px 56px 18px;
+    }
+
+    .mini-note {
+      position: absolute;
+      z-index: 6;
+      border-radius: 13px;
+      background: var(--cream-2);
+      border: 1px solid rgba(79,111,88,.13);
+      box-shadow: 0 8px 20px rgba(64,83,65,.12);
+      padding: 9px 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mini-note.top {
+      right: -10px;
+      top: 28px;
+    }
+
+    .mini-note.bottom {
+      left: -42px;
+  bottom: 18px;
+  max-width: 150px;
+    }
+
+    .note-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--clay-soft);
+      color: #bf8269;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .mini-note strong {
+      display: block;
+      font-size: 9.5px;
+      line-height: 1.15;
+    }
+
+    .mini-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 8.5px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .section {
+      padding: 34px 0 48px;
+    }
+
+    .section-row {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .section h2 {
+      margin: 0;
+      line-height: 1.15;
+      font-size: 27px;
+      letter-spacing: -.03em;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.55;
+      font-size: 10.5px;
+      margin: 0;
+    }
+
+    .mini-cards {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .info-card,
+    .skill-card,
+    .project-card,
+    .timeline-card,
+    .contact-card,
+    .qr-card {
+      background: var(--card);
+      border: 1px solid rgba(79,111,88,.15);
+      border-radius: 14px;
+      box-shadow: 0 5px 16px rgba(64,83,65,.04);
+    }
+
+    .info-card {
+      padding: 15px;
+      min-height: 72px;
+    }
+
+    .round-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--sage-soft);
+      display: grid;
+      place-items: center;
+      color: var(--sage-dark);
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .round-icon.gold {
+      background: #f1e8cf;
+      color: #9d8246;
+    }
+
+    .round-icon.clay {
+      background: #efe2d0;
+      color: #9b755b;
+    }
+
+    .small-label {
+      margin: 0 0 7px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      font-weight: 900;
+      font-size: 8.5px;
+    }
+
+    .info-card p,
+    .skill-card p,
+    .project-card p,
+    .timeline-card p,
+    .contact-card p,
+    .qr-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.45;
+      font-size: 9.5px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      font-size: 27px;
+    }
+
+    .section-head p {
+      max-width: 285px;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.55;
+      font-size: 10px;
+      margin: 0;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .skill-card {
+       padding: 18px;
+  min-height: 170px;
+  position: relative;
+}
+
+    .skill-number {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 8px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .skill-card h3 {
+      font-size: 13px;
+      margin: 10px 0 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: var(--sage-soft);
+      color: var(--sage-dark);
+      font-weight: 800;
+      font-size: 8.5px;
+      border-radius: 999px;
+      padding: 5px 8px;
+      line-height: 1;
+    }
+
+    .tag.gold {
+      background: #efe7cf;
+      color: #8c7440;
+    }
+
+    .tag.clay {
+      background: #ead8c9;
+      color: #8f6b58;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      max-width: 430px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(64,83,65,.12);
+    }
+
+    .project-card img {
+      width: calc(100% - 16px);
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 8px;
+    }
+
+    .project-body {
+      padding: 8px 14px 16px;
+    }
+
+    .project-body h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    .project-body p {
+      margin-bottom: 12px;
+    }
+
+    .placeholder-img {
+      width: calc(100% - 16px);
+      height: 120px;
+      border-radius: 12px;
+      margin: 8px;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--sage-dark);
+      background: linear-gradient(135deg, var(--sage-soft), #efe2d0);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-card {
+      padding: 16px;
+    }
+
+    .timeline-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .mission-panel {
+      background: var(--sage-dark);
+      color: white;
+      border-radius: 22px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .mission-panel h2 {
+      color: white;
+      font-size: 31px;
+      margin: 0 0 14px;
+      line-height: 1.1;
+    }
+
+    .mission-panel p {
+      color: rgba(255,255,255,.82);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .mission-panel .kicker {
+      color: #dfe9dc;
+    }
+
+    .mission-card {
+      background: rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .mission-card h3 {
+      color: white;
+      font-size: 17px;
+      margin: 0 0 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 44px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .contact-card {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .qr-card {
+      grid-column: 1 / -1;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .qr-box {
+      width: 78px;
+      height: 78px;
+      border-radius: 12px;
+      border: 1px dashed rgba(79,111,88,.35);
+      background: #f8f4ea;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 9px;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+.social-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-right: 12px;
+  background: var(--sage-soft);
+  color: var(--sage-dark);
+  flex: 0 0 auto;
+}
+
+.social-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.contact-card > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+    footer {
+      padding: 22px 0 34px;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(79,111,88,.14);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 780px) {
+      .wrap,
+      .nav-inner {
+        width: min(100% - 28px, 670px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .section-row,
+      .contact-grid,
+      .mission-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+        gap: 34px;
+      }
+
+      .hero-photo-wrap {
+        justify-self: start;
+        width: min(100%, 310px);
+      }
+
+      .photo-card img {
+        height: 340px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .mini-cards,
+      .skill-grid,
+      .project-grid,
+      .contact-cards {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .hero-title {
+        font-size: 50px;
+      }
+
+      .mini-note.top {
+        right: 8px;
+      }
+
+      .mini-note.bottom {
+        left: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#home">
+          <span class="brand-mark">DJ</span>
+          <span>Dipika Jirel</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#mission">Mission</a>
+        </div>
+
+        <a class="nav-button" href="#contact">↗</a>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="tiny-pill"><span class="tiny-dot"></span></div>
+
+          <p class="kicker">Hello, I’m</p>
+          <h1 class="hero-title">Dipika Jirel</h1>
+
+          <p class="role">
+            Computer Science Student | Software Developer | Data & Education Tech Enthusiast
+          </p>
+
+          <p class="subtitle">
+            Building technology that helps students, communities, and global learners.
+          </p>
+
+          <div class="hero-actions">
+            <a class="pill-button green" href="#projects">↗</a>
+            <a class="pill-button light" href="#about">✣</a>
+          </div>
+
+          <div class="meta">
+            <span>⌾ From Nepal, based in Ohio</span>
+            <span>⌁ Wright State University</span>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="photo-glow"></div>
+          <div class="photo-dash"></div>
+
+          <div class="photo-card">
+            <img src="enhanced_image.jpg" alt="Dipika Jirel portrait">
+          </div>
+
+          <div class="mini-note top">
+            <div class="note-icon">♡</div>
+            <div>
+              <strong>Student-first</strong>
+              <span>always curious</span>
+            </div>
+          </div>
+
+          <div class="mini-note bottom">
+            <div>
+              <strong>Currently building</strong>
+              <span>education tools with meaningful impact</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-row">
+          <div>
+            <p class="kicker">About me</p>
+            <h2>A curious builder with roots in Nepal and dreams that travel far.</h2>
+          </div>
+
+          <div>
+            <p class="section-copy">
+              I am a Computer Science undergraduate student at Wright State University and an international student from Nepal. I am passionate about building useful technology, learning software development, and creating digital tools that solve real problems. My interests include app development, data visualization, education technology, and personal finance tools for students.
+            </p>
+
+            <div class="mini-cards">
+              <div class="info-card">
+                <div class="round-icon">01</div>
+                <div class="small-label">Learning</div>
+                <p>Software development & practical problem-solving</p>
+              </div>
+
+              <div class="info-card">
+                <div class="round-icon clay">02</div>
+                <div class="small-label">Journey</div>
+                <p>Nepal → Ohio — anywhere ideas can grow</p>
+              </div>
+
+              <div class="info-card">
+                <div class="round-icon gold">03</div>
+                <div class="small-label">Inspired by</div>
+                <p>Students, access, and meaningful technology</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Skills & curiosities</p>
+            <h2>Tools I’m growing with</h2>
+          </div>
+          <p>A mix of classroom learning, creative experimentation, and real-world curiosity.</p>
+        </div>
+
+   <div class="skill-grid">
+  <div class="skill-card">
+    <span class="skill-number">01</span>
+    <div class="round-icon">⌘</div>
+    <h3>Programming</h3>
+    <div class="tags">
+      <span class="tag">Java</span>
+      <span class="tag">Python</span>
+      <span class="tag">C++</span>
+      <span class="tag">SQL</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Kotlin</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">Assembly</span>
+      <span class="tag">DSA</span>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <span class="skill-number">02</span>
+    <div class="round-icon clay">✦</div>
+    <h3>Tools & Systems</h3>
+    <div class="tags">
+      <span class="tag clay">GitHub</span>
+      <span class="tag clay">VS Code</span>
+      <span class="tag clay">Android Studio</span>
+      <span class="tag clay">Linux</span>
+      <span class="tag clay">Ubuntu</span>
+      <span class="tag clay">LC-3 Simulator</span>
+      <span class="tag clay">VirtualBox</span>
+      <span class="tag clay">Tableau</span>
+      <span class="tag clay">Figma</span>
+    </div>
+  </div>
+
+  <div class="skill-card">
+    <span class="skill-number">03</span>
+    <div class="round-icon gold">✧</div>
+    <h3>Automation & Writing</h3>
+    <div class="tags">
+      <span class="tag gold">n8n</span>
+      <span class="tag gold">Make.com</span>
+      <span class="tag gold">Automation</span>
+      <span class="tag gold">AI Workflows</span>
+      <span class="tag gold">Technical Writing</span>
+      <span class="tag gold">API Integration</span>
+      <span class="tag gold">EdTech</span>
+    </div>
+  </div>
+</div>
+
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Featured projects</p>
+            <h2>Ideas with heart, built with code</h2>
+          </div>
+          <p>A few concepts and creations that reflect the kind of problems I love to solve.</p>
+        </div>
+
+        <div class="project-grid">
+          <a class="project-card" href="https://unispend-student.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="UniSpend.png" alt="UniSpend project preview">
+            <div class="project-body">
+              <div class="small-label">Student finance</div>
+              <h3>UniSpend</h3>
+              <p>A student budgeting and personal finance app idea designed to help college students track expenses and manage money.</p>
+              <div class="tags">
+                <span class="tag">Budgeting</span>
+                <span class="tag">UX concept</span>
+              </div>
+            </div>
+          </a>
+
+          <article class="project-card">
+            <img src="javalearning.png" alt="Java Learning in Nepali project preview">
+            <div class="project-body">
+              <div class="small-label">Education project</div>
+              <h3>Java Learning in Nepali</h3>
+              <p>Educational content project teaching beginner Java programming in Nepali for students.</p>
+              <div class="tags">
+                <span class="tag gold">Java</span>
+                <span class="tag gold">Learning access</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="photography.jpg" alt="Photography and visual storytelling project">
+            <div class="project-body">
+              <div class="small-label">Photography</div>
+              <h3>Photography & Visual Storytelling</h3>
+              <p>Creative work from photography class projects, focused on composition, lighting, editing, and storytelling.</p>
+              <div class="tags">
+                <span class="tag clay">Photography</span>
+                <span class="tag clay">Editing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+           <img src="mypicture.jpeg" alt="LC-3 Assembly programming project">
+            <div class="project-body">
+              <div class="small-label">Systems</div>
+              <h3>LC-3 Assembly Projects</h3>
+              <p>Low-level programming assignments using registers, memory, branching, loops, subroutines, and input/output.</p>
+              <div class="tags">
+                <span class="tag">Assembly</span>
+                <span class="tag">Systems</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Experience</p>
+            <h2>Student support, leadership, and learning</h2>
+          </div>
+          <p>My experience combines technical learning with communication, mentorship, and community engagement.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-card">
+            <div class="small-label">Campus role</div>
+            <h3>Peer Academic Leader</h3>
+            <p>Support students with academic success, study strategies, campus resources, and tutoring-style guidance.</p>
+          </div>
+
+          <div class="timeline-card">
+            <div class="small-label">Teaching support</div>
+            <h3>Supplemental Instruction / Tutoring</h3>
+            <p>Create review sessions, study materials, discussion questions, and student-friendly explanations.</p>
+          </div>
+
+          <div class="timeline-card">
+            <div class="small-label">Content creation</div>
+            <h3>Educational Creator</h3>
+            <p>Create beginner-friendly educational content focused on programming, learning, and student life.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission" class="section">
+        <div class="mission-panel">
+          <div>
+            <p class="kicker">Mission</p>
+            <h2>Using technology to make education more accessible.</h2>
+            <p>My long-term goal is to build digital education tools for students in remote villages and underserved communities. I want to use technology to support students who may not have enough resources but have strong dreams and potential.</p>
+          </div>
+
+          <div class="mission-card">
+            <h3>What I care about</h3>
+            <p>Education access, student tools, beginner-friendly learning, international student support, and technology with real human impact.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-grid">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Let’s connect.</h2>
+          <p class="section-copy">I am open to internships, campus collaborations, project feedback, and opportunities where I can learn and contribute.</p>
+        </div>
+
+        <div class="contact-cards">
+            <a class="contact-card" href="mailto:dipikajirel861@gmail.com">
+    <div class="social-left">
+      <span class="social-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </span>
+      <div>
+        <div class="small-label">Email</div>
+        <p>dipikajirel861@gmail.com</p>
+      </div>
+    </div>
+    <span>↗</span>
+  </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/in/dipika-jirel-39a581309/" target="_blank" rel="noopener noreferrer">
+             <div>
+    <span class="social-icon">
+      <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.9-2.5 4.1-2.5 4.4 0 5.2 2.9 5.2 6.7V24h-4v-8.6c0-2.1 0-4.7-2.9-4.7s-3.3 2.2-3.3 4.5V24H8V8z"/>
+      </svg>
+    </span>
+    <div>
+      <div class="small-label">LinkedIn</div>
+      <p>Dipika Jirel</p>
+    </div>
+  </div>
+  <span>↗</span>
+          </a>
+
+         <a class="contact-card" href="https://github.com/deepikaJirel/" target="_blank" rel="noopener noreferrer">
+  <div>
+    <span class="social-icon">
+      <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 .5C5.7.5.7 5.6.7 11.8c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 1.8 2.9 1.3.1-.7.4-1.2.7-1.5-2.6-.3-5.2-1.3-5.2-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3.1 1.1.9-.2 1.8-.4 2.8-.4s1.9.1 2.8.4c2.2-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.3-5.2 5.6.4.4.8 1.1.8 2.2V22c0 .3.2.7.8.6 4.6-1.5 7.8-5.8 7.8-10.8C23.3 5.6 18.3.5 12 .5z"/>
+      </svg>
+    </span>
+    <div>
+      <div class="small-label">GitHub</div>
+      <p>deepikaJirel</p>
+    </div>
+  </div>
+  <span>↗</span>
+</a>
+
+          <a class="contact-card" href="https://www.youtube.com/@deepikajirel" target="_blank" rel="noopener noreferrer">
+            <div>
+    <span class="social-icon">
+      <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.8 2.5 12 2.5 12 2.5s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1C.7 4.5.5 6.2.5 6.2S.2 8.1.2 10v1.8c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8zM9.8 14.6V7.8l6.3 3.4-6.3 3.4z"/>
+      </svg>
+    </span>
+    <div>
+      <div class="small-label">YouTube</div>
+      <p>@deepikajirel</p>
+    </div>
+  </div>
+  <span>↗</span>
+</a>
+
+  
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <div class="footer-inner">
+        <span>© 2026 Dipika Jirel</span>
+        <span>Designed and developed with HTML and CSS.</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
